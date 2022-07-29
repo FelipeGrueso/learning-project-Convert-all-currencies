@@ -1,0 +1,29 @@
+const input = require('sync-input');
+console.log("Welcome to Currency Converter!");
+const currency = {USD:1.0, JPY : 113.5, EUR	: 0.89, RUB :	74.36, GBP :	0.75};
+for (const each in currency) {
+  console.log(`1 USD equals ${currency[each]} ${each}`);
+}
+
+console.log("I can convert USD to these currencies: JPY, EUR, RUB, USD, GBP")
+console.log("Type the currency you wish to convert: USD")
+
+let moneda = input("To: ").toUpperCase();
+if (currency[moneda]){
+  let amount = (input("Amount: "));
+  
+  if (! isNaN(amount)){   
+    
+    if (amount < 1){
+      console.log("The amount cannot be less than 1")}
+    else {
+      console.log(`Result: ${amount} USD equals ${(currency[moneda] * amount).toFixed(4)} ${moneda}`)}
+      }
+  else{
+    console.log("The amount has to be a number")}
+    }
+else{
+    console.log("Unknown currency")
+}
+  
+  
